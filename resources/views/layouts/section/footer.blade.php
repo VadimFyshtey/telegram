@@ -8,10 +8,11 @@
         <div class="col-lg-4">
             <div class="footer_menu pull-right">
                 <ul>
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#">Услуги</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
+                    <li><a href="{{ route('news') }}">Новости</a></li>
+                    <li><a href="{{ route('service') }}">Услуги</a></li>
                     <li><a href="" data-toggle="modal" data-target="#myModal" id="addChannel">Добавить канал</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="{{ route('contact') }}">Написать админу</a></li>
                 </ul>
             </div>
         </div>

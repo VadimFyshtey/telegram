@@ -13,6 +13,22 @@
         </section>
         <section class="random_chanel hidden-sm hidden-xs">
             <h3>Рандомный канал</h3>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel_random" >
+                    <h4 title="{{ $random_channel->name }}"><a target="_blank" href="{{ $random_channel->url }}">{{ $random_channel->name }}</a></h4>
+                    <div class="one_category">Категория:<a href="/category/{{ $random_channel->category->id }}"> {{ $random_channel->category->name }}</a></div>
+                    <hr class="one_category_hr" />
+                    {!! Html::image('img/channel/' . $random_channel->image, $random_channel->name) !!}
+                    <h5 title="{{ $random_channel->description }}">{{ mb_strimwidth($random_channel->description, 0, 80, "...") }}</h5>
+                    <span class="clearfix"></span>
+                    <h6 class="pull-right">
+                        <i class="glyphicon glyphicon-calendar"></i> {{ $random_channel->created_at->format('Y-m-d') }} <br/>
+                    </h6>
+                    <h6 class="pull-left">
+                        <i class="glyphicon glyphicon-user"></i> > {{ $random_channel->subscribers }}
+                    </h6>
+                    <div class="clearfix"></div>
+                    <a target="_blank" href="{{ $random_channel->url }}" class="url">Перейти на канал</a>
+                </div>
         </section>
         <section class="reclama hidden-sm hidden-xs">
             <h3>Реклама</h3>

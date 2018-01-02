@@ -2,10 +2,6 @@
 
 Route::group(['middleware' => 'web'], function (){
 
-    Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
-
-    Route::get('/category/{id}', ['uses' => 'HomeController@category', 'as' => 'category']);
-
     Route::get('/search/', ['uses' => 'HomeController@search', 'as' => 'search']);
 
     Route::get('/news', ['uses' => 'NewsController@index', 'as' => 'news']);
@@ -15,8 +11,6 @@ Route::group(['middleware' => 'web'], function (){
     Route::get('/service', ['uses' => 'ServiceController@index', 'as' => 'service']);
 
     Route::match(['get', 'post'], '/contact' ,['uses' => 'ContactController@index', 'as' => 'contact']);
-
-
 
 });
 
@@ -58,6 +52,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
 });
 
 Route::post('/add', ['uses' => 'AddChannelController@add', 'as' => 'add_channel']);
+
+Route::get('/{sort?}', ['uses' => 'HomeController@index', 'as' => 'home']);
+
+Route::get('/category/{id}/{sort?}', ['uses' => 'HomeController@category', 'as' => 'category']);
 
 Auth::routes();
 

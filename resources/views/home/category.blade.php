@@ -34,7 +34,21 @@
 @section('content')
 <div class="col-lg-9">
     <h2>Категория: {{ $category_one['name'] }}</h2>
-    @if($channels_popul->isNotEmpty())
+    @if($channels->isNotEmpty())
+        <div class="sort_category pull-left">
+            <span>Сортировать по: </span>
+            <select>
+                <option >Дате</option>
+                <option data-sort="date">Новые</option>
+                <option data-sort="date_asc">Старые</option>
+            </select>
+            <select>
+                <option >Подписчикам</option>
+                <option data-sort="subscribers">Больше</option>
+                <option data-sort="subscribers_asc">Меньше</option>
+            </select>
+        </div>
+        <div class="clearfix"></div>
     @foreach($channels as $channel)
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel">
             <h4 title="{{ $channel->name }}"><a target="_blank" href="{{ $channel->url }}">{{ $channel->name }}</a></h4>

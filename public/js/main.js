@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
 
+    //addChannel
     $('#addChannelForm').submit(function (e) {
         e.preventDefault();
         var token = $("input[name='_token']").val();
@@ -30,6 +31,54 @@ jQuery(document).ready(function ($) {
                 }
             });
 
+        });
+    });
+
+    //Sort
+    $('.sort select').on('change', function (e) {
+        e.preventDefault();
+        var sort = $("option:selected", this).attr('data-sort');
+
+        $.ajax({
+            url: '/' + sort,
+            type: 'get',
+            data: 'sort_name='+sort,
+
+            success: function (html) {
+                $('body').html(html);
+
+                var str = sort;
+                history.pushState(null, null, str);
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+    $('.sort_category select').on('change', function (e) {
+        e.preventDefault();
+
+        // var id = Number(window.location.href.replace(/\D+/g,""));
+        var arr = window.location.href.split('/');
+        var id = arr[4];
+        id = parseInt(id);
+        var sort = $("option:selected", this).attr('data-sort');
+        $.ajax({
+            url: '/category/' + id + '/' + sort ,
+            type: 'get',
+            data: 'sort_name='+sort,
+
+            success: function (html) {
+                $('body').html(html);
+
+                    var str = /category/ +  id + '/' + sort;
+                    history.pushState(null, null, str);
+
+            },
+            error: function () {
+
+            }
         });
     });
 

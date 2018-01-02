@@ -30,18 +30,25 @@
 @endsection
 
 @section('content')
-<div class="col-lg-9">
+<div class="col-lg-9 od">
 <h2>Все телеграм каналы</h2>
     @if($channels->isNotEmpty())
+    <div class="sort pull-left">
+        <span>Сортировать по: </span>
+        <select>
+            <option >Дате</option>
+            <option data-sort="date">Новые</option>
+            <option data-sort="date_asc">Старые</option>
+        </select>
+        <select>
+            <option >Подписчикам</option>
+            <option data-sort="subscribers">Больше</option>
+            <option data-sort="subscribers_asc">Меньше</option>
+        </select>
+    </div>
+        <div class="clearfix"></div>
     @foreach($channels as $channel)
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel animate" >
-            <div class="animateme"
-                 data-when="enter"
-                 data-from="0.5"
-                 data-to="0"
-                 data-opacity="0"
-                 data-translatex="-200"
-                 data-rotatez="90">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel" >
                 <h4 title="{{ $channel->name }}"><a target="_blank" href="{{ $channel->url }}">{{ $channel->name }}</a></h4>
                 <div class="one_category">Категория:<a href="/category/{{ $channel->category->id }}"> {{ $channel->category->name }}</a></div>
                 <hr class="one_category_hr" />
@@ -56,7 +63,6 @@
                 </h6>
                 <div class="clearfix"></div>
                 <a target="_blank" href="{{ $channel->url }}" class="url">Перейти на канал</a>
-            </div>
         </div>
     @endforeach
     <div class="clearfix"></div>

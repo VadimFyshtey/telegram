@@ -223,6 +223,16 @@ input {
 	outline: none;
 }
 /*Слайдер*/
+#category{
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	background: transparent;
+	width: 140px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	height: 34px;
+}
 .hr_home{
 	height: 2px;
 	background-color: #0d3625;
@@ -271,8 +281,52 @@ input {
 	font-size: 1.5em;
 }
 .random_chanel{
+	text-align: center;
 	height: 300px;
 	background-color: #dae9e3;
+}
+.one_chanel_random{
+	height: 225px;
+	width: 245px;
+	border: 1px dotted #d6d6d6;
+	padding: 5px 5px 15px 5px;
+	margin: 5px;
+	background-color: #fff;
+}
+.one_chanel_random h4{
+	white-space: nowrap; /* Отменяем перенос текста */
+	overflow: hidden; /* Обрезаем содержимое */
+	text-overflow: ellipsis; /* Многоточие */
+	font-size: 15px;
+	text-align: left;
+	font-weight: bold;
+	padding: 0 5px;
+}
+.one_chanel_random h5{
+	text-align: left;
+	height: 50px;
+
+	margin: 5px 0;
+}
+.one_chanel_random h6{
+	padding: 0 5px;
+	margin: 15px 5px;
+}
+.one_chanel_random img{
+	width: 63px;
+	height: 63px;
+	border-radius: 10px;
+	text-align: left;
+	/*padding: 5px;*/
+	margin: 5px;
+	float: left;
+	border: 1px solid #d6d6d6;
+}
+.one_chanel_random:hover {
+	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	border: 1px dotted #9e9e9e;
 }
 .reclama{
 	height: 300px;
@@ -343,6 +397,23 @@ input {
     -o-transform: scale(1.02);
 	border: 1px dotted #9e9e9e;
 }
+.sort,
+.sort_category{
+	font-size: 13px;
+	padding: 5px;
+}
+.sort select,
+.sort_category select{
+	font-size: 13px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	background: transparent;
+	width: 140px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	height: 34px;
+}
+
 .url{
 	text-align: center;
 	color: #fff;

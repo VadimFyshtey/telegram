@@ -25,7 +25,7 @@
                 </div>
             @endforeach
                 <div class="clearfix"></div>
-                <?php echo $channels_search->render(); ?>
+
         @endif
     </div>
 @endsection
