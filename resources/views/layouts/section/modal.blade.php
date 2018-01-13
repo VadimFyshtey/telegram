@@ -7,7 +7,15 @@
             </div>
             <div id="load"></div>
             <br/>
+            <div class="help">
+                <p>Помощь:</p>
+                <ul>
+                    <li>Образец ссылки: https://t.me/rap_american или @business_facts</li>
+                    <li>Два раза один канал не добавиться</li>
+                </ul>
+            </div>
             <div class="col-lg-12">
+
                 <div class="myerror">
                     @if(count($errors) > 0)
                         <div class="alert alert-danger">
@@ -24,7 +32,7 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="channel">Ссылка на канал:</label>
-                        <input name="url" type="text" class="form-control" id="channel" placeholder="https://t.me/rap_american">
+                        <input name="url" type="text" class="form-control" id="channel" placeholder="https://t.me/rap_american или @business_facts">
                     </div>
                     <div class="form-group">
                         <label for="category">Категория: </label>

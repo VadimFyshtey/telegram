@@ -1,11 +1,11 @@
 <footer>
     <div id="top"><i class="glyphicon glyphicon-chevron-up"></i></div>
     <div class="container">
-        <h6 class="by">Сайт by <a href="#">88</a></h6>
+        <h6 class="by">Сайт by <a href="{{ route('by88') }}">88</a></h6>
         <div class="col-lg-8 footer_text pull-left">
             <p>&copy; 2017 Каталог популярных телеграм каналов.</p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 hidden-xs">
             <div class="footer_menu pull-right">
                 <ul>
                     <li><a href="{{ route('home') }}">Главная</a></li>

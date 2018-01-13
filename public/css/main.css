@@ -241,7 +241,13 @@ input {
 	height: 100%;
 	background-color: #dae9e3;
 }
-
+.help{
+	font-size: 14px;
+}
+.help p{
+	margin-left: 10px;
+	font-weight: bold;
+}
 .list_category {
 	padding:0;
 	list-style: none;
@@ -266,7 +272,7 @@ input {
 .list_category li a:hover{
 	color: #63b4f4;
 }
-.category_menu h3, .random_chanel h3, .reclama h3{
+.category_menu h3, .random_chanel h3, .reclama h3, .last_news h3{
 	text-align: center;
 	font-weight: bold;
 	font-family: "Segoe UI";
@@ -277,8 +283,31 @@ input {
 	height: 50px;
 	padding-top: 7px;
 }
-.random_chanel h3, .reclama h3{
+.random_chanel h3, .reclama h3, .last_news h3{
 	font-size: 1.5em;
+}
+.last_news{
+	text-align: left;
+	background-color: #dae9e3;
+}
+.last_news p{
+	white-space: nowrap; /* Отменяем перенос текста */
+	overflow: hidden; /* Обрезаем содержимое */
+	text-overflow: ellipsis; /* Многоточие */
+	font-size: 13px;
+	font-weight: bold;
+	margin: 10px;
+	padding: 0;
+}
+.last_news img{
+	height: 63px;
+	width: 63px;
+	margin: 5px 10px;
+	float: left;
+}
+.last_news_short_content{
+	font-size: 12px;
+	margin: 5px 10px;
 }
 .random_chanel{
 	text-align: center;
@@ -305,7 +334,6 @@ input {
 .one_chanel_random h5{
 	text-align: left;
 	height: 50px;
-
 	margin: 5px 0;
 }
 .one_chanel_random h6{
@@ -329,7 +357,7 @@ input {
 	border: 1px dotted #9e9e9e;
 }
 .reclama{
-	height: 300px;
+	height: auto;
 	background-color: #dae9e3;
 }
 /*Все каталоги*/
@@ -354,6 +382,7 @@ input {
 .one_category_hr{
 	margin: 3px;
 }
+
 .one_chanel{
 	height: 225px;
 	width: 265px;
@@ -361,6 +390,9 @@ input {
 	padding: 5px 5px 15px 5px;
 	margin: 5px;
 	background-color: #fff;
+}
+.one_chanel_category{
+	height: 205px; !important;
 }
 .one_chanel h4{
 	white-space: nowrap; /* Отменяем перенос текста */
@@ -398,12 +430,16 @@ input {
 	border: 1px dotted #9e9e9e;
 }
 .sort,
-.sort_category{
+.sort_news,
+.sort_category,
+.sort_news_category{
 	font-size: 13px;
 	padding: 5px;
 }
 .sort select,
-.sort_category select{
+.sort_news select,
+.sort_category select,
+.sort_news_category select{
 	font-size: 13px;
 	margin-bottom: 10px;
 	margin-left: 5px;
@@ -413,7 +449,69 @@ input {
 	border: 1px solid #ccc;
 	height: 34px;
 }
-
+.contact_form{
+	text-align: left;
+	margin: 10px;
+}
+.one_news{
+	height: 310px;
+	width: 265px;
+	border: 1px dotted #d6d6d6;
+	padding: 5px 5px 15px 5px;
+	margin: 5px;
+	background-color: #fff;
+}
+.one_news_category{
+	height: 290px; !important;
+}
+.one_news h3{
+	font-size: 15px;
+	text-align: left;
+	font-weight: bold;
+	padding: 0 5px;
+	margin: 5px;
+	height: 30px;
+}
+.one_news .one_category{
+	padding: 0 5px;
+	margin: 5px;
+}
+.one_news .short_content{
+	text-align: left;
+	font-size: 14px;
+	margin: 5px 0;
+	height: 150px;
+}
+.one_news h6{
+	padding: 0 5px;
+	margin: 15px 5px;
+}
+.one_news img{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	text-align: left;
+	/*padding: 5px;*/
+	margin: 5px;
+	float: left;
+	border: 1px solid #d6d6d6;
+}
+.one_news:hover{
+	-webkit-transform: scale(1.02);
+	-moz-transform: scale(1.02);
+	-o-transform: scale(1.02);
+	border: 1px dotted #9e9e9e;
+}
+.view_news img{
+	float: left;
+	margin: 20px 20px 10px 0px;
+	max-width: 300px;
+	max-height: 300px;
+}
+.view_news .news_content{
+	text-align: left;
+	margin: 20px 0px 10px 0px;
+}
 .url{
 	text-align: center;
 	color: #fff;
@@ -435,6 +533,9 @@ input {
 .pagination>.active>span:hover{
 	background-color : #63B4F4; !important;
 	border-color : #63B4F4; !important;
+}
+.contact{
+	text-align: left;
 }
 /*Все каталоги*/
 @keyframes example {
@@ -468,6 +569,7 @@ input {
 	opacity: 1;
 	transition: opacity 1s;
 }
+
 footer{
 	height: 200px;
 	background-color: #63b4f4;
@@ -516,7 +618,9 @@ footer{
 	bottom: 0;
 	left: 50%;
 }
-
+.by88{
+	text-align: left;
+}
 #load{
 	background-image: url("../img/giphy.gif");
 	position: fixed;

@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="col-lg-9">
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Телеграм реклама -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2586863288185463"
+             data-ad-slot="3416746893"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
         <h2>Поиск: <?= $q ?></h2>
         @if($channels_search->isEmpty() || !($q) || !isset($channels_search) || count($channels_search) == 0)
             <h3>Поиск не дал результата.</h3>
@@ -25,7 +37,19 @@
                 </div>
             @endforeach
                 <div class="clearfix"></div>
-
+                <?php echo $channels_search->render(); ?>
         @endif
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Телеграм реклама -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2586863288185463"
+             data-ad-slot="3416746893"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
     </div>
 @endsection

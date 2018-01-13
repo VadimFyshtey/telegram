@@ -20,8 +20,12 @@ class CreateNewsTable extends Migration
             $table->text('content');
             $table->boolean('status')->default(0);
             $table->integer('view')->default(0);
+            $table->string('image', 255);
+            $table->string('title', 255)->nullable();
             $table->string('description', 255)->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('category_news');
         });
     }
 

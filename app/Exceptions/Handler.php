@@ -4,6 +4,11 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+use App\News;
+use App\Category;
+use App\Channel;
 
 class Handler extends ExceptionHandler
 {
@@ -48,6 +53,27 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($exception instanceof NotFoundHttpException)
+        {
+
+            $random_channel = Channel::inRandomOrder()->first();
+
+            $last_news = News::where('status', '1')
+                ->orderBy('created_at', 'desc')
+                ->limit(3)
+                ->get();
+
+            $category = Category::all()->toArray();
+
+            $channels_popul = Channel::where('status', '1')
+                ->where('popul', '1')
+                ->with('category')
+                ->orderBy('id', 'desc')
+                ->get();
+
+            return response()->view('layouts.404', compact('random_channel', 'last_news', 'category', 'channels_popul'), 404);
+        }
+
         return parent::render($request, $exception);
     }
 }

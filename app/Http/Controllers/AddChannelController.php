@@ -23,11 +23,15 @@ class AddChannelController extends Controller
             $category = $_POST['category'];
 
             $this->validate($request, [
-                    'url' => 'required|max:255|min:14|url|regex:#https://t.me/[a-zA-Z0-9_]{1,}$#|unique:Channel,url',
+                    'url' => ['required','max:255','min:5','regex:#(https://t.me/[a-zA-Z0-9_]{1,}$)|(@[a-zA-Z0-9_]{1,}$)#', 'unique:channel,url'],
                     'category' => 'required',
             ]);
 
-
+            $url_preg = preg_match('#@#', $url);
+            if($url_preg === 1){
+                $url = trim($url, '@');
+                $url = 'https://t.me/' . $url;
+            }
 
             $html = curl_get($url);
 

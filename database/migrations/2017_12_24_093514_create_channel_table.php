@@ -17,7 +17,7 @@ class CreateChannelTable extends Migration
             $table->increments('id');
             $table->string('name', 255);
             $table->text('description')->nullable();
-            $table->text('image');
+            $table->string('image', 255);
             $table->integer('subscribers')->default(0);
             $table->string('url', 255)->unique();
             $table->integer('category_id')->unsigned();

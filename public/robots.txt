@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+Disallow: /app
+Disallow: /bootstrap
+Disallow: /config
+Disallow: /database
+Disallow: /helper
+Disallow: /storage
+Disallow: /tests
+Disallow: /vendor
+Disallow: /.env
+Disallow: /.env.example

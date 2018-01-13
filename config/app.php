@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,7 +165,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
-
+        Frozennode\Administrator\AdministratorServiceProvider::class,
+        Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -230,6 +231,7 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'MetaTag'   => Torann\LaravelMetaTags\Facades\MetaTag::class,
 
     ],
 

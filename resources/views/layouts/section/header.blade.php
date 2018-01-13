@@ -6,18 +6,40 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Каналы Telegram – Каталог лучших каналов</title>
-    <meta name="description" content="">
-    <link rel="shortcut icon" href="img/favicon/icon.png" type="image/x-icon">
+    <title>{{ MetaTag::get('title') }}</title>
+    {!! MetaTag::tag('description') !!}
+    <link rel="shortcut icon" href="{{ asset('img/icon.png') }}" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+
+    <meta name="yandex-verification" content="0f1d86c2a9935d57" />
+    <meta name='wmail-verification' content='c51e1c1e4f090b02f2da2f5ab12b0c1e' />
+
     <link rel="stylesheet" href="{{ asset('libs/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/slick/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media.css') }}">
     <script src="{{ asset('libs/modernizr/modernizr.js') }}"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2586863288185463",
+            enable_page_level_ads: true
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102624075-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-102624075-3');
+    </script>
 </head>
 <body>
 <header>
@@ -56,12 +78,12 @@
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <h1>Каталог Телеграмм каналов</h1>
                 <p>
-                    Список самых популярных каталогов в нас сайте. <br/>
+                    Список самых популярных каталогов в нас на сайте. <br/>
                     Каналы в телеграмме на любой вкус по категориям, вступайте,<br/>
                     читайте, добавляйте свои каналы.
                 </p>
                 <form method="get" accept-charset="" action="{{ route('search') }}" id="h-search">
-                    <input type="text" placeholder="Поиск каналов" name="q" />
+                    <input id='search' type="text" placeholder="Поиск каналов" name="q" />
                     <input type="submit" value="" />
                 </form>
             </div>
