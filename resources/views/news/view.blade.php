@@ -31,6 +31,16 @@
         </section>
         <section class="reclama hidden-sm hidden-xs">
             <h3>Реклама</h3>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Телеграм реклама -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2586863288185463"
+                 data-ad-slot="3416746893"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </section>
     </div>
 @endsection

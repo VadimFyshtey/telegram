@@ -14,10 +14,6 @@ return [
         ],
     ],
     'edit_fields' => [
-        'id' => [
-            'type' => 'text',
-            'title' => 'Id',
-        ],
         'name' => [
             'type' => 'text',
             'title' => 'Категория',
@@ -28,4 +24,11 @@ return [
             'limit' => 255,
         ]
     ],
+
+    'filters' => [
+        'name' => [
+            'title' => 'Название'
+        ],
+    ],
+
 ];

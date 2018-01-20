@@ -58,8 +58,7 @@
         </section>
     </div>
     @show
-
-
+    
     <div class="clearfix hidden-lg hidden-md"></div>
         <section class="popul">
             @yield('popul')

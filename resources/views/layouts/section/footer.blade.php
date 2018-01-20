@@ -33,9 +33,9 @@
 <![endif]-->
 <script src="{{ asset('libs/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('libs/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/common.js') }}"></script>
 <script src="{{ asset('libs/slick/slick.min.js') }}"></script>
 <script src="{{ asset('js/scrollTop.js') }}"></script>
-<script src="{{ asset('js/common.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
 </body>

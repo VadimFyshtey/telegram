@@ -57,7 +57,7 @@ return [
         ],
         'url' => [
             'type' => 'text',
-            'title' => 'url канала',
+            'title' => 'Url канала',
         ],
         'category' => [
             'type' => 'relationship',
@@ -77,4 +77,27 @@ return [
             'title' => 'Дата создания',
         ]
     ],
+
+    'filters' => [
+        'name' => [
+            'title' => 'Название'
+        ],
+        'url' => [
+            'title' => 'Url канала'
+        ],
+        'category' => [
+            'type' => 'relationship',
+            'name_field' => 'name',
+            'title' => 'Категория',
+        ],
+        'status' => [
+            'type' => 'bool',
+            'title' => 'Отображать',
+        ],
+        'popul' => [
+            'type' => 'bool',
+            'title' => 'Популярный',
+        ],
+    ],
+
 ];

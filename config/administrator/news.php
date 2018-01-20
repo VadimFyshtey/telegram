@@ -71,4 +71,20 @@ return [
             'limit' => 255,
         ]
     ],
+
+    'filters' => [
+        'name' => [
+            'title' => 'Название'
+        ],
+        'category_news' => [
+            'type' => 'relationship',
+            'name_field' => 'name',
+            'title' => 'Категория',
+        ],
+        'status' => [
+            'type' => 'bool',
+            'title' => 'Отображать',
+        ],
+    ],
+
 ];
