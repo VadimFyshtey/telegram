@@ -35,6 +35,7 @@
                 <hr/>
                 <span><b>Контакты:</b></span>
                 @if($data['trade']['contact'])
+                    @php $data['trade']['contact'] = trim($data['trade']['contact'], '@') @endphp
                     <a href="https://t.me/{{ $data['trade']['contact'] }}" target="_blank">{{ $data['trade']['contact'] }}</a>
                 @else
                     <p>Зайдите в раздел информации о канале, для того, чтобы связаться с его автором.</p>
