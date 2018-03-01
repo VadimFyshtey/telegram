@@ -5,7 +5,7 @@
         <section class="category_menu">
             <h3>Категории</h3>
             <ul class="list_category">
-                @foreach($categoryNews as $categ)
+                @foreach($data['categoryNews'] as $categ)
                     <li><a href="/news/category/{{ $categ['id'] }}">{{ $categ['name'] }}</a></li>
                 @endforeach
             </ul>
@@ -13,20 +13,20 @@
         <section class="random_chanel hidden-sm hidden-xs">
             <h3>Рандомный канал</h3>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel_random" >
-                <h4 title="{{ $random_channel->name }}"><a target="_blank" href="{{ $random_channel->url }}">{{ $random_channel->name }}</a></h4>
-                <div class="one_category">Категория:<a href="/category/{{ $random_channel->category->id }}"> {{ $random_channel->category->name }}</a></div>
+                <h4 title="{{ $data['random_channel']->name }}"><a target="_blank" href="{{ $data['random_channel']->url }}">{{ $data['random_channel']->name }}</a></h4>
+                <div class="one_category">Категория:<a href="/category/{{ $data['random_channel']->category->id }}"> {{ $data['random_channel']->category->name }}</a></div>
                 <hr class="one_category_hr" />
-                {!! Html::image('img/channel/' . $random_channel->image, $random_channel->name) !!}
-                <h5 title="{{ $random_channel->description }}">{{ mb_strimwidth($random_channel->description, 0, 80, "...") }}</h5>
+                {!! Html::image('img/channel/' . $data['random_channel']->image, $data['random_channel']->name) !!}
+                <h5 title="{{ $data['random_channel']->description }}">{{ mb_strimwidth($data['random_channel']->description, 0, 80, "...") }}</h5>
                 <span class="clearfix"></span>
                 <h6 class="pull-right">
-                    <i class="glyphicon glyphicon-calendar"></i> {{ $random_channel->created_at->format('Y-m-d') }} <br/>
+                    <i class="glyphicon glyphicon-calendar"></i> {{ $data['random_channel']->created_at->format('Y-m-d') }} <br/>
                 </h6>
                 <h6 class="pull-left">
-                    <i class="glyphicon glyphicon-user"></i> > {{ $random_channel->subscribers }}
+                    <i class="glyphicon glyphicon-user"></i> > {{ $data['random_channel']->subscribers }}
                 </h6>
                 <div class="clearfix"></div>
-                <a target="_blank" href="{{ $random_channel->url }}" class="url">Перейти на канал</a>
+                <a target="_blank" href="{{ $data['random_channel']->url }}" class="url">Перейти на канал</a>
             </div>
         </section>
         <section class="reclama hidden-sm hidden-xs">
@@ -51,7 +51,7 @@
 
 @section('content')
     <div class="col-lg-9 view_news">
-        <h3>{{ $news['name'] }}</h3>
+        <h3>{{ $data['news']['name'] }}</h3>
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Телеграм реклама -->
@@ -64,21 +64,21 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-        {!! Html::image('img/news/' . $news['image'], $news['name']) !!}
-        <div class="news_content">{!! $news['content'] !!}</div>
+        {!! Html::image('img/news/' . $data['news']['image'], $data['news']['name']) !!}
+        <div class="news_content">{!! $data['news']['content'] !!}</div>
         <div class="clearfix"></div>
         <hr class="hr_home"/>
         <div class="clearfix"></div>
         <h6 class="pull-left">
-            <i class="glyphicon glyphicon-send"></i> <b>Категория:</b> <a href="/news/category/{{ $news->category_news->id }}">{{ $news->category_news->name }}</a>
+            <i class="glyphicon glyphicon-send"></i> <b>Категория:</b> <a href="/news/category/{{ $data['news']->category_news->id }}">{{ $data['news']->category_news->name }}</a>
         </h6>
         <span class="clearfix"></span>
         <h6 class="pull-left">
-            <i class="glyphicon glyphicon-calendar"></i> <b>Дата публикации:</b> {{ $news->created_at->format('Y-m-d') }} <br/>
+            <i class="glyphicon glyphicon-calendar"></i> <b>Дата публикации:</b> {{ $data['news']->created_at->format('Y-m-d') }} <br/>
         </h6>
         <span class="clearfix"></span>
         <h6 class="pull-left">
-            <i class="glyphicon glyphicon-eye-open"></i> <b>Просмотры:</b> {{ $news['view'] }}
+            <i class="glyphicon glyphicon-eye-open"></i> <b>Просмотры:</b> {{ $data['news']->view }}
         </h6>
         <div class="clearfix"></div>
         <br/>

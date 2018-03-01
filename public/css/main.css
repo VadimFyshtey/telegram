@@ -24,31 +24,6 @@ body textarea:required:valid {
 	
 }
 
-html.js .loader {
-	background: none repeat scroll 0 0 #ffffff;
-	bottom: 0;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 100%;
-	z-index: 9999;
-}
-html.js .loader_inner {
-	background-image: url("../img/preloader.gif");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: #fff;
-	height: 60px;
-	width: 60px;
-	margin-top: -30px;
-	margin-left: -30px;
-	left: 50%;
-	top: 50%;
-	position: absolute;
-}
 body {
 	font-size: 16px;
 	min-width: 320px;
@@ -106,23 +81,53 @@ body {
 header{
 	background-color: #009b5f;
 }
+.home h2{
+    font-size: 42px !important;
+    font-family: Impact !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 3px -1px 2px rgba(0, 0, 0, 1);
+}
+.home .add-class{
+ position: static;
+}
+.home h2 a:hover{
+color: #63B4F4;
+transition: all ease 1s;
+}
+.home_news img{
+    height: 190px;
+    width: 300px;
+}
+.home_news p{
+    padding: 5px 20px;
+    text-align: center;
+    margin: 5px;
+}
+.text_news{
+    margin: 10px 40px;
+}
+.text_news_last{
+    margin: 10px 40px;
+    font-size: 20px;
+}
 .head{
-	height: 280px;
-	width: 100%;
-	background-color: #009b5f;
+height: 300px;
+width: 100%;
+background-color: #009b5f;
 }
 .head h1{
-	text-align: center;
-	color: #FFF;
-	font-weight: bold;
-	font-family: "Segoe UI";
-	text-shadow: 0 2px #1b1c1e;
-	font-size: 2.5em;
-	margin: 0;
+text-align: center;
+color: #FFF;
+font-weight: bold;
+font-family: "Segoe UI";
+text-shadow: 0 2px #1b1c1e;
+font-size: 2.5em;
+margin: 0;
 }
 .head p{
-	margin-top: 30px;
-	font-size: 1.2em;
+margin-top: 30px;
+font-size: 1.2em;
 }
 /*Поиск*/
 #h-search {
@@ -157,10 +162,90 @@ input {
 	background: transparent url(../img/h-search.png) no-repeat center;
 }
 /*Поиск*/
+.link_service{
+	text-align: center;
+	margin: 10px 0 0 0;
+}
+.link_service a{
+	color: #000000;
+}
+.link_service a:hover{
+	color: #454545;
+}
+.detail_panel{
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	height: 600px;
+	margin: 20px 120px;
+	background-color: #ffffff;
 
+}
+.detail_view{
+	text-align: left;
+	padding: 20px 40px;
+}
+.trade_img {
+	text-align: center;
+}
+.trade_img img{
+	height: 130px;
+	width: 130px;
+	border-radius: 50%;
+	margin: 2px auto;
+	text-align: center;
+
+}
+.subscribers_trade{
+	color: #555;
+	font-size: 13px;
+	text-align: center;
+}
+.subscribers_price{
+	color: green;
+	font-size: 15px;
+	text-align: center;
+}
+.subscribers_pr_yes{
+	color: green;
+	font-size: 15px;
+	text-align: center;
+}
+.subscribers_pr_no{
+	color: red;
+	font-size: 15px;
+	text-align: center;
+}
+.pr{
+	font-size: 14px;
+	margin: 0;
+	text-align: center;
+}
+.go_channel_trade{
+	cursor: pointer;
+	text-align: center;
+
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	border-radius: 4px;
+	background-color: #63b4f4;
+	color: #000000;
+	font-weight: bold;
+	margin: 0 10px;
+}
+.go_channel_trade a{
+	color: #000000;
+}
+.go_channel_trade:hover{
+	background-color: #6294d3;
+	transition: all ease 1s;
+}
 /*Слайдер*/
 .carusel{
 	text-align: center;
+	overflow: hidden;
+	max-height: 330px;
 }
 .popul h2{
 	text-align: center;
@@ -222,16 +307,44 @@ input {
 	inset 0 0 20px rgba(0,0,0,.1);
 	outline: none;
 }
-/*Слайдер*/
-#category{
+.add-class{
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: #63b4f4;
+	color: #000000;
+	font-weight: bold;
+	margin: 30px 50px 50px 50px;
+}
+
+#category,
+#category_trade{
 	font-size: 15px;
 	margin-bottom: 10px;
-	margin-left: 5px;
 	background: transparent;
 	width: 140px;
 	padding: 5px;
 	border: 1px solid #ccc;
 	height: 34px;
+}
+#addTradeForm label{
+	min-width: 100px;
 }
 .hr_home{
 	height: 2px;
@@ -241,6 +354,7 @@ input {
 	height: 100%;
 	background-color: #dae9e3;
 }
+
 .help{
 	font-size: 14px;
 }
@@ -248,12 +362,11 @@ input {
 	margin-left: 10px;
 	font-weight: bold;
 }
-.list_category {
+.list_category{
 	padding:0;
 	list-style: none;
 	font-weight: bold;
 	font-family: "Segoe UI";
-
 }
 .list_category li{
 	padding:6px;
@@ -313,6 +426,46 @@ input {
 	text-align: center;
 	height: 300px;
 	background-color: #dae9e3;
+}
+
+/*trade*/
+.trade_filter{
+	height: 100%;
+}
+.trade_filter h3{
+	text-align: center;
+	font-weight: bold;
+	color: #0c5539;
+	text-shadow: 0 1px #1b1c1e;
+	font-size: 1.5em;
+	padding-top: 9px;
+}
+.trade_filter p{
+	font-weight: bold;
+}
+.trade_filter label{
+	font-weight: normal;
+}
+.table_trade img{
+	margin-right: 7px;
+	border-radius: 50%;
+	float: left;
+	width: 55px;
+}
+.table_trade .trade_category{
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.table-dark {
+	color: #fff;
+	background-color: #212529;
+}
+.table-dark tbody tr:hover{
+	background-color: #343a40;
+}
+.center-class{
+	text-align: center;
 }
 .one_chanel_random{
 	height: 225px;
@@ -432,7 +585,9 @@ input {
 .sort,
 .sort_news,
 .sort_category,
-.sort_news_category{
+.sort_news_category,
+.sort_category_filter,
+.sort_pr{
 	font-size: 13px;
 	padding: 5px;
 }
@@ -571,16 +726,8 @@ input {
 }
 
 footer{
-	height: 200px;
+	height: 50px;
 	background-color: #63b4f4;
-}
-.footer_text p{
-	margin-top: 140px;
-	color: #000000;
-	font-weight: bold;
-	font-family: "Segoe UI";
-	text-shadow: 0 1px #1b1c1e;
-	font-size: 20px;
 }
 .text{
 	opacity: 0.9; /* Значение прозрачности */
@@ -597,29 +744,18 @@ footer{
 	-moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 	box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
-.footer_menu{
-	opacity: 0.9; /* Значение прозрачности */
-	filter: alpha(Opacity=90); /* Прозрачность в IE */
-	width: 200px;
-	margin-top: 30px;
-	margin-bottom: 20px;
-	padding: 10px;
-	background-color: #c3e3ff;;
-	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	-webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	-moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-	box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
 .by{
 	text-align: center;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
+    font-size: 12px;
+    padding-top: 15px;
+}
+.by a{
+    color: black;
+    text-decoration: underline !important;
+
 }
 .by88{
-	text-align: left;
+	text-align: center;
 }
 #load{
 	background-image: url("../img/giphy.gif");

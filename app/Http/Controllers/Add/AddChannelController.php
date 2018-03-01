@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Add;
 
-require_once __DIR__ . '/../../../helper/curl.php';
-require_once __DIR__ . '/../../../helper/simple_html_dom.php';
+require_once __DIR__ . '/../../../../helper/curl.php';
+require_once __DIR__ . '/../../../../helper/simple_html_dom.php';
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Channel;
 
 class AddChannelController extends Controller
 {
-    public function add(Request $request){
-
-
+    public function add(Request $request)
+    {
 
         if ($request->ajax())
         {
@@ -42,7 +42,7 @@ class AddChannelController extends Controller
             if($er){
                 $name =  $dom->find('.tgme_page_title', 0)->innertext;
                 $name = trim(strip_tags((string)$name));
-                $name = preg_replace('/[^\p{L}\p{N}\s]/u','&nbsp;', $name);
+                $name = preg_replace('/[^\p{L}\p{N}\s][~\<\`\!\@\"\#\¹\$\;\%\^\:\&\?\*\(\)\+\=\\/\.\,]/u','&nbsp;', $name);
             } else {
                 $name = 'Нету название';
             }
@@ -52,7 +52,7 @@ class AddChannelController extends Controller
             if($er){
                 $description =  $dom->find('.tgme_page_description', 0)->innertext;
                 $description = trim(strip_tags((string)$description));
-                $description = preg_replace('/[^\p{L}\p{N}\s]/u','&nbsp;', $description);
+                $description = preg_replace('/[^\p{L}\p{N}\s][~\<\`\!\@\"\#\¹\$\;\%\^\:\&\?\*\(\)\+\=\\/\.\,]/u','&nbsp;', $description);
             } else {
                 $description = 'Нету описания';
             }

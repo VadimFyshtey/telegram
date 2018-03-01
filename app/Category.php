@@ -11,4 +11,8 @@ class Category extends Model
     public function channels(){
         return $this->hasMany('App\Channel');
     }
+
+    public function trade(){
+        return $this->hasMany('App\Trade');
+    }
 }

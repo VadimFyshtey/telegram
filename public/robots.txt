@@ -1,4 +1,7 @@
 User-agent: *
+Disallow: /*?
+Disallow: /*&
+Disallow: /*=
 Disallow: /app
 Disallow: /bootstrap
 Disallow: /config
@@ -9,3 +12,5 @@ Disallow: /tests
 Disallow: /vendor
 Disallow: /.env
 Disallow: /.env.example
+
+Host: http://telegram-channel.ru/

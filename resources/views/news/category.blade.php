@@ -6,7 +6,7 @@
             <h3>Категории</h3>
             <ul class="list_category">
                 <li><a href="/news/">Все новости</a></li>
-                @foreach($categoryNews as $categ)
+                @foreach($data['categoryNews'] as $categ)
                     <li><a href="/news/category/{{ $categ['id'] }}">{{ $categ['name'] }}</a></li>
                 @endforeach
             </ul>
@@ -14,20 +14,20 @@
         <section class="random_chanel hidden-sm hidden-xs">
             <h3>Рандомный канал</h3>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 one_chanel_random" >
-                <h4 title="{{ $random_channel->name }}"><a target="_blank" href="{{ $random_channel->url }}">{{ $random_channel->name }}</a></h4>
-                <div class="one_category">Категория:<a href="/category/{{ $random_channel->category->id }}"> {{ $random_channel->category->name }}</a></div>
+                <h4 title="{{ $data['random_channel']->name }}"><a target="_blank" href="{{ $data['random_channel']->url }}">{{ $data['random_channel']->name }}</a></h4>
+                <div class="one_category">Категория:<a href="/category/{{ $data['random_channel']->category->id }}"> {{ $data['random_channel']->category->name }}</a></div>
                 <hr class="one_category_hr" />
-                {!! Html::image('img/channel/' . $random_channel->image, $random_channel->name) !!}
-                <h5 title="{{ $random_channel->description }}">{{ mb_strimwidth($random_channel->description, 0, 80, "...") }}</h5>
+                {!! Html::image('img/channel/' . $data['random_channel']->image, $data['random_channel']->name) !!}
+                <h5 title="{{ $data['random_channel']->description }}">{{ mb_strimwidth($data['random_channel']->description, 0, 80, "...") }}</h5>
                 <span class="clearfix"></span>
                 <h6 class="pull-right">
-                    <i class="glyphicon glyphicon-calendar"></i> {{ $random_channel->created_at->format('Y-m-d') }} <br/>
+                    <i class="glyphicon glyphicon-calendar"></i> {{ $data['random_channel']->created_at->format('Y-m-d') }} <br/>
                 </h6>
                 <h6 class="pull-left">
-                    <i class="glyphicon glyphicon-user"></i> > {{ $random_channel->subscribers }}
+                    <i class="glyphicon glyphicon-user"></i> > {{ $data['random_channel']->subscribers }}
                 </h6>
                 <div class="clearfix"></div>
-                <a target="_blank" href="{{ $random_channel->url }}" class="url">Перейти на канал</a>
+                <a target="_blank" href="{{ $data['random_channel']->url }}" class="url">Перейти на канал</a>
             </div>
         </section>
         <section class="reclama hidden-sm hidden-xs">
@@ -52,7 +52,7 @@
 
 @section('content')
     <div class="col-lg-9">
-    <h3>Категория: {{ $category_one['name'] }}</h3>
+    <h3>Категория: {{ $data['categoryOne']['name'] }}</h3>
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- Телеграм реклама -->
@@ -65,7 +65,7 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-    @if($news->isNotEmpty())
+    @if($data['news']->isNotEmpty())
             <div class="sort_news_category pull-left">
                 <span>Сортировать по: </span>
                 <select class="pull-right">
@@ -81,7 +81,7 @@
                 </select>
             </div>
             <div class="clearfix  hidden-md"></div>
-    @foreach($news as $item)
+    @foreach($data['news'] as $item)
         <div class="col-lg-4 col-md-4 col col-sm-6 col-xs-12 one_news one_news_category">
             <h3><a href="/news/detail/{{ $item->id }}" title="{{ $item->name }}">{{ mb_strimwidth($item->name , 0, 55, "...")}}</a></h3>
             <hr class="one_category_hr" />
@@ -100,7 +100,7 @@
         </div>
     @endforeach
         <div class="clearfix"></div>
-        <?php echo $news->render(); ?>
+        <?php echo $data['news']->render(); ?>
     @else
         <h4>Категория пустая, в скором времени здесь будут новости.</h4>
     @endif

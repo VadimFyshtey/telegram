@@ -12,9 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
-
     <meta name="yandex-verification" content="0f1d86c2a9935d57" />
     <meta name='wmail-verification' content='c51e1c1e4f090b02f2da2f5ab12b0c1e' />
 
@@ -23,7 +20,6 @@
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media.css') }}">
-    <script src="{{ asset('libs/modernizr/modernizr.js') }}"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
@@ -58,9 +54,10 @@
                         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
                             <ul class="nav navbar-nav">
                                 <li><a href="{{ route('home') }}">Главная</a></li>
+                                <li><a href="{{ route('channel') }}">Каналы</a></li>
+                                <li><a href="{{ route('trade') }}">Биржа</a></li>
                                 <li><a href="{{ route('news') }}">Новости</a></li>
                                 <li><a href="{{ route('service') }}">Услуги</a></li>
-                                <li><a href="" data-toggle="modal" data-target="#myModal" id="addChannel">Добавить канал</a></li>
                                 <li><a href="{{ route('contact') }}">Контакты</a></li>
                             </ul>
                         </div>
@@ -76,16 +73,30 @@
                 <a href="/">{!! Html::image('img/logo.png', 'Каталог телеграмм каналов') !!}</a>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                <h1>Каталог Телеграмм каналов</h1>
+                @if( preg_match ('#/channel#' ,  $_SERVER['REQUEST_URI'] ))
+                    <h1>Каталог телеграмм каналов</h1>
+                @elseif( preg_match ('#/trade#' ,  $_SERVER['REQUEST_URI'] ) )
+                    <h1>Биржа телеграмм каналов</h1>
+                @else
+                    <h1>Биржа и каталог телеграмм каналов</h1>
+                @endif
+
                 <p>
-                    Каталог самых популярных телеграмм каналов в нас на сайте. <br/>
-                    Каналы в телеграмме на любой вкус по категориям, вступайте,<br/>
-                    читайте, добавляйте свои каналы.
+                    В нас на сайте каталог самых популярных телеграмм каналов.<br/>
+                    Каналы на любой вкус по категориям, вступайте,<br/>
+                    читайте, добавляйте свои. Также биржа рекламы которая<br/>
+                    поможит вам заработать на ваших каналах.
                 </p>
                 <form method="get" accept-charset="" action="{{ route('search') }}" id="h-search">
                     <input id='search' type="text" placeholder="Поиск каналов" name="q" />
                     <input type="submit" value="" />
                 </form>
+                @if( preg_match ('#/channel#' ,  $_SERVER['REQUEST_URI'] ))
+                    <button class="btn btn-lg add-class" data-toggle="modal" data-target="#myModal_channel" id="addChannel">Добавить канал в каталог</button>
+                @elseif( preg_match ('#/trade#' ,  $_SERVER['REQUEST_URI'] ) )
+                    <button class="btn btn-lg add-class" data-toggle="modal" data-target="#myModal_trade" id="addTrade">Добавить канал в биржу</button>
+                @endif
+
             </div>
         </div>
     </div>

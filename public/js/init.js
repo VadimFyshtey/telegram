@@ -34,7 +34,11 @@ $(document).ready(function(){
 
         }]
     });
-    $('#myModal').on('shown.bs.modal', function () {
+    $('#myModal_channel').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    });
+
+    $('#myModal_trade').on('shown.bs.modal', function () {
         $('#myInput').focus()
     });
 

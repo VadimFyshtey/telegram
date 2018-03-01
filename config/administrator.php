@@ -74,6 +74,7 @@ return array(
 	 */
 	'menu' => array(
 	    'channels',
+	    'trade',
         'news',
         'category_channels',
         'category_news',
@@ -93,7 +94,7 @@ return array(
 	},
 
 	/**
-	 * This determines if you will have a dashboard (whose view you provide in the dashboard_view option) or a non-dashboard home
+	 * This determines if you will have a dashboard (whose view you provide in the dashboard_view option) or a non-dashboard channel
 	 * page (whose menu item you provide in the home_page option)
 	 *
 	 * @type bool

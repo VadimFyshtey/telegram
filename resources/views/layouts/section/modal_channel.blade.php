@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal_channel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -34,14 +34,16 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="channel">Ссылка на канал:</label>
-                        <input name="url" type="text" class="form-control" id="channel" placeholder="https://t.me/rap_american или @business_facts">
+                        <input name="url" type="text" class="form-control" id="channel" placeholder="https://t.me/rap_american или @business_facts" required>
                     </div>
                     <div class="form-group">
                         <label for="category">Категория: </label>
                         <select name="category" id="category">
-                            @foreach($category as $categ)
-                                <option value="{{ $categ['id'] }}">{{ $categ['name'] }}</option>
-                            @endforeach
+                            @if(isset($data['category']))
+                                @foreach( $data['category'] as $categ)
+                                    <option value="{{ $categ['id'] }}">{{ $categ['name'] }}</option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
 

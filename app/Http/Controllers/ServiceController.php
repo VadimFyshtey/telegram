@@ -2,33 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Category;
-use App\Channel;
-use App\News;
-use App\Service;
-use MetaTag;
+use App\Repositories\ServiceRepository;
 
 class ServiceController extends Controller
 {
 
-    public function index(){
+    protected $repositoryInit;
 
-        $service = Service::find(1);
+    public function __construct(ServiceRepository $repositoryInit)
+    {
+        $this->repositoryInit = $repositoryInit;
+    }
 
-        MetaTag::set('title', $service['title']);
-        MetaTag::set('description', $service['description']);
-
-        $last_news = News::where('status', '1')
-            ->orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get();
-
-        $random_channel = Channel::inRandomOrder()->first();
-
-        $category = Category::all()->toArray();
-
-        return view('service.index', compact('category', 'random_channel', 'last_news', 'service'));
+    public function index()
+    {
+        $data = $this->repositoryInit->initService();
+        return view('service.index', compact('data'));
     }
 
 }
